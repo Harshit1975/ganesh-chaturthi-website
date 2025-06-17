@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ganesh Chaturthi Celebration - JHUS Team</title>
+  <meta name="description" content="Celebrate Ganesh Chaturthi with JHUS-JAI HANUMAN UTSAV SAMTIHI. Explore previous years' memories, Laddu winners, festival countdown and event schedule." />
+  <meta name="keywords" content="Ganesh Chaturthi, Festival, Laddu Winners, Ganpati Festival, JHUS, Celebration, Indian Festivals" />
+  <meta name="author" content="JHUS Team" />
+  <meta property="og:title" content="Ganesh Chaturthi Celebration - JHUS Team" />
+  <meta property="og:description" content="Celebrate Ganesh Chaturthi with previous years' memories, Laddu winners, countdown and festival schedule." />
+  <meta property="og:type" content="website" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Poppins:wght@600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <style>
+    /* Reset & Core */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    html {
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #fbbf24, #f97316, #ea580c);
+      color: #fef3c7;
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: transparent;
+      user-select:none;
+      line-height: 1.5;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    a:focus, button:focus {
+      outline: 2px solid #fbbf24;
+      outline-offset: 2px;
+    }
+    /* Utility */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+    }
+    h1, h2, h3 {
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    h1 {
+      font-size: 2.8rem;
+      color: #efefef;
+      text-shadow: 2px 2px 6px #a04e0f99;
+    }
+    h2 {
+      font-size: 2rem;
+      color: #fef3c7;
+      text-shadow: 1.5px 1.5px 5px #863400cc;
+    }
+    h3 {
+      font-size: 1.4rem;
+      color: #fef3c7;
+      text-shadow: 1px 1px 4px #984d00cc;
+      margin-bottom: 12px;
+    }
+    p {
+      font-size: 1rem;
+      color: #ffedd5;
+      text-shadow: 1px 1px 3px #7c2d120d;
+    }
+    small {
+      font-size: 0.9rem;
+      color: #ffd689dd;
+      font-style: italic;
+    }
+    /* Header (Sticky top, with team name and logo) */
+    header.site-header {
+      position: sticky;
+      top: 0;
+      background: #a34104;
+      color: #fef3c7;
+      padding: 16px 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+      z-index: 101;
+      font-weight: 700;
+      font-size: 1.25rem;
+      letter-spacing: 1.25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+      user-select: none;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, #b45309 0%, #a34104 50%, #f59e0b 100%);
+      text-shadow: 1px 1px 3px #581c00cc;
+      box-shadow: 0 6px 20px #7f3600cc;
+    }
+    .header-logo {
+      font-size: 1.5rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 6px #4b1f01cc;
+    }
+    /* Scroll fade in animation */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    section {
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
+      margin: 1em auto 3em;
+      padding: 1em;
+      width: min(90vw, 900px);
+      border-radius: 16px;
+      box-shadow: inset 0 0 80px 14px #7c4200aa;
+      background: linear-gradient(135deg, #894d03cc, #994e03cc 70%);
+    }
+    section.ganesh-hero {
+      text-align: center;
+      color: #fef3c7;
+      box-shadow: inset 0 0 100px 20px #5a310100;
+      margin-top: 1.5rem;
+    }
+    section.ganesh-hero h1 {
+      font-size: 3.8rem;
+      margin-bottom: 1rem;
+      text-shadow: 3px 3px 8px #4b1f01aa;
+    }
+    section.ganesh-hero p {
+      font-size: 1.3rem;
+      font-weight: 600;
+      text-shadow: 2px 2px 5px #551d01cc;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    /* Photo gallery */
+    section.photo-gallery {
+      background: #a34e0411;
+      box-shadow: 0 8px 28px #7a340000;
+    }
+    section.photo-gallery h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .gallery-card {
+      background: #bb7c02cc;
+      border-radius: 16px;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 3px 20px #622f00cc;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #fff5d3;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-shadow: 1px 1px 4px #4d2a00cc;
+    }
+    .gallery-card:hover {
+      box-shadow: 0 10px 44px #9c5d0bcc;
+      transform: translateY(-6px) scale(1.05);
+    }
+    .gallery-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 16px 16px 0 0;
+      transition: filter 0.3s ease;
+      filter: drop-shadow(4px 10px 6px #512a040d);
+      user-select: none;
+    }
+    .gallery-card .caption {
+      padding: 12px 16px;
+      text-align: center;
+      user-select: text;
+    }
+    /* Laddu Winners Section */
+    section.laddu-winners {
+      background: #773900cc;
+      padding: 32px 24px;
+      color: #ffe8a2;
+      box-shadow: 0 12px 32px #5a2c000b inset;
+    }
+    section.laddu-winners h2 {
+      text-align: center;
+      color: #fedf7d;
+      margin-bottom: 2rem;
+      font-size: 2.8rem;
+      font-weight: 900;
+      text-shadow: 2px 2px 10px #4a300066;
+    }
+    .winner-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill,minmax(230px,1fr));
+      gap: 28px;
+    }
+    .winner-card {
+      background: #b76c0ccc;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px #4f2500bb;
+      cursor: default;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #fff3d0;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-shadow: 1px 1px 6px #4a2800cc;
+      user-select: none;
+    }
+    .winner-card:hover {
+      box-shadow: 0 16px 44px #a659090c;
+      transform: translateY(-6px);
+    }
+    .winner-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 16px 16px 0 0;
+      box-shadow: inset 0 0 20px 8px #d9b75daa;
+      user-select: none;
+    }
+    .winner-name {
+      padding: 16px 12px;
+      text-align: center;
+      user-select: text;
+    }
+    /* Event Schedule Section */
+    section.event-schedule {
+      background: #a2580ccc;
+      padding: 32px 24px;
+      color: #fff9d8;
+      box-shadow: 0 10px 32px #523400cc inset;
+      font-family: 'Poppins', sans-serif;
+    }
+    section.event-schedule h2 {
+      text-align: center;
+      font-size: 2.6rem;
+      color: #fff6b3;
+      font-weight: 900;
+      margin-bottom: 1.5rem;
+      text-shadow: 1px 1px 8px #4a270000;
+    }
+    .schedule-list {
+      max-width: 780px;
+      margin: 0 auto;
+      list-style: none;
+      font-size: 1.1rem;
+      color: #ffeaa9;
+    }
+    .schedule-list li {
+      background: #883f0dcc;
+      padding: 14px 18px;
+      margin-bottom: 12px;
+      border-radius: 12px;
+      box-shadow: 0 2px 14px #642a050d;
+      display: flex;
+      justify-content: space-between;
+      user-select:none;
+    }
+    .schedule-time {
+      font-weight: 900;
+      text-shadow: 1px 1px 3px #000000cc;
+    }
+    .schedule-event {
+      font-weight: 600;
+      text-shadow: 1px 1px 3px #301d000c;
+    }
+    /* Testimonials Section */
+    section.testimonials {
+      background: #a35a070d;
+      margin-bottom: 80px;
+      padding: 32px 24px;
+      box-shadow: 0 20px 44px #582e010d inset;
+      color: #fff7d1;
+      border-radius: 20px;
+    }
+    section.testimonials h2 {
+      font-size: 2.8rem;
+      font-weight: 900;
+      text-align: center;
+      margin-bottom: 36px;
+      text-shadow: 1px 1px 10px #553500bb;
+      color: #fff3a3;
+    }
+    .testimonial-card {
+      max-width: 780px;
+      background: #ba7f042d;
+      margin: 12px auto;
+      border-radius: 16px;
+      padding: 20px 30px;
+      box-shadow: 0 12px 32px #5d3103cc inset;
+      font-style: italic;
+      font-size: 1.15rem;
+      line-height: 1.5;
+      position: relative;
+    }
+    .testimonial-author {
+      margin-top: 14px;
+      font-weight: 800;
+      font-size: 1.1rem;
+      text-align: right;
+      color: #fff8bb;
+      text-shadow: 1px 1px 6px #553900cc;
+    }
+    /* Footer */
+    footer.site-footer {
+      background: #6b2e01dd;
+      color: #fef3c7dd;
+      padding: 24px 24px;
+      text-align: center;
+      font-size: 0.9rem;
+      user-select:none;
+      box-shadow: inset 0 5px 20px #5b2705cc;
+      font-family: 'Poppins', sans-serif;
+    }
+    footer.site-footer a {
+      color: #fedc8c;
+      margin: 0 8px;
+      text-decoration: underline;
+    }
+    /* Lightbox Modal */
+    #lightboxOverlay {
+      position: fixed;
+      display: none;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.85);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+    #lightboxOverlay img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(255 255 255 / 0.3);
+      user-select: none;
+    }
+    #lightboxOverlay.visible {
+      display: flex;
+      animation: fadeIn 0.3s ease forwards;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    /* Responsive */
+    @media (max-width: 650px) {
+      section.ganesh-hero h1 {
+        font-size: 2.8rem;
+      }
+      .winner-card img {
+        height: 180px;
+      }
+      section.laddu-winners, section.event-schedule, section.testimonials {
+        width: 90vw;
+        padding: 24px 16px;
+      }
+      .gallery-card img,
+      .winner-card img {
+        height: 140px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" role="banner" aria-label="Website header with team name">
+    <div class="header-logo" aria-label="Logo text">JHUS-JAI HANUMAN UTSAV SAMTIHI</div>
+    <nav aria-label="Middle Navigation">
+      <!-- Could add nav links if needed -->
+    </nav>
+  </header>
+
+  <main>
+    <section class="ganesh-hero" aria-labelledby="heroTitle">
+      <h1 id="heroTitle" tabindex="0">Celebrate Ganesh Chaturthi</h1>
+      <p tabIndex="0">Welcome to our special platform dedicated to the joyous festival of Ganesh Chaturthi. Explore the vibrant history, cherish memories from past years, and behold the victorious laddu winners who grasped the blessings of Lord Ganesh. May Ganpati bestow wisdom and prosperity upon all of us.</p>
+    </section>
+
+    <section class="photo-gallery" aria-labelledby="galleryTitle" role="region">
+      <h2 id="galleryTitle" tabindex="0">Previous Years' Memories</h2>
+      <div class="gallery-grid" id="gallery">
+        <article class="gallery-card">
+          <img src="D:/photos/Ganesh 2k24/IMG-20240907-WA0038.jpg" alt="Colorful Ganesh idol decorated with flowers at the 2019 celebration" tabindex="0" />
+          <div class="caption">Ganesh Chaturthi 2019</div>
+        </article>
+        <article class="gallery-card">
+          <img src="D:/photos/Ganesh 2k24/WhatsApp Image 2025-06-17 at 08.57.58_574d65e4 2023.jpg" alt="Virtual Ganesh Chaturthi celebration during pandemic year 2020 community online event" tabindex="0" />
+          <div class="caption">Ganesh Chaturthi 2020 - Virtual Celebration</div>
+        </article>
+        <article class="gallery-card">
+          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8af143ca-a963-4ff7-83eb-5de1a76290aa.png" alt="Festive Ganesh Chaturthi procession with people carrying the idol and music" tabindex="0" />
+          <div class="caption">Ganesh Chaturthi 2021 Procession</div>
+        </article>
+        <article class="gallery-card">
+          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/15543dd8-c469-4847-b7bd-a1b2c588921c.png" alt="Evening festival lighting with Ganesh idols and devotees offering prayers in 2022" tabindex="0" />
+          <div class="caption">Ganesh Chaturthi 2022 Festival</div>
+        </article>
+        <article class="gallery-card">
+          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/95192135-6b17-48bd-90d1-4a37622a2bff.png" alt="Recent Ganesh Chaturthi 2023 celebration with decorated pandal and devotional events" tabindex="0" />
+          <div class="caption">Ganesh Chaturthi 2023 Celebration</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="laddu-winners" aria-labelledby="ladduTitle" role="region">
+      <h2 id="ladduTitle" tabindex="0">Laddu Winners</h2>
+      <div class="winner-grid" id="ladduWinners">
+        <article class="winner-card" tabindex="0" aria-label="Laddu Winner Harshit Shah">
+          <div class="winner-name">Harshit Shah</div>
+          <img src="D:/photos/Ganesh 2k24/IMG-20240920-WA0124.jpg" alt="Harshit Shah  holding laddu prize with joyful expression" />
+        </article>
+        <article class="winner-card" tabindex="0" aria-label="Laddu Winner Anjali Patel">
+          <div class="winner-name">Anjali Patel</div>
+          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/4be49a62-1145-4678-a53a-b29c5af569e9.png" alt="Anjali Patel smiling proudly with the laddu prize" />
+        </article>
+        <article class="winner-card" tabindex="0" aria-label="Laddu Winner Vishal Singh">
+          <div class="winner-name">Vishal Singh</div>
+          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9b930f29-9780-43a7-a7f7-ec25a40872f2.png" alt="Vishal Singh holding laddu with devotees applauding" />
+        </article>
+        <article class="winner-card" tabindex="0" aria-label="Laddu Winner Swati Deshmukh">
+          <div class="winner-name">Swati Deshmukh</div>
+          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/62bb534a-7fdd-4cf9-86d3-85d78d0eee88.png" alt="Swati Deshmukh celebrating her laddu prize in the festival" />
+        </article>
+      </div>
+    </section>
+
+    <section class="event-schedule" aria-labelledby="scheduleTitle" role="region">
+      <h2 id="scheduleTitle" tabindex="0">Festival Event Schedule</h2>
+      <ul class="schedule-list" role="list">
+        <li><span class="schedule-time">06:00 AM</span><span class="schedule-event">Ganesh Idol Installation Ceremony</span></li>
+        <li><span class="schedule-time">07:30 AM</span><span class="schedule-event">Morning Aarti & Prayers</span></li>
+        <li><span class="schedule-time">10:00 AM</span><span class="schedule-event">Cultural Programs & Dance Performances</span></li>
+        <li><span class="schedule-time">01:00 PM</span><span class="schedule-event">Community Feast & Laddu Distribution</span></li>
+        <li><span class="schedule-time">04:00 PM</span><span class="schedule-event">Storytelling: Ganesh Legends</span></li>
+        <li><span class="schedule-time">07:00 PM</span><span class="schedule-event">Evening Aarti & Bhajans</span></li>
+        <li><span class="schedule-time">09:00 PM</span><span class="schedule-event">Closing Ceremony & Prasad Distribution</span></li>
+      </ul>
+    </section>
+
+    <section class="testimonials" aria-labelledby="testimonialsTitle" role="region">
+      <h2 id="testimonialsTitle" tabindex="0">Festival Testimonials</h2>
+      <div class="testimonial-card" tabindex="0" aria-label="Testimonial by Priya Sharma">
+        “The Ganesh Chaturthi atmosphere here is enchanting. The decorations, events, and community spirit truly bring Lord Ganesh’s blessings to life.”
+        <div class="testimonial-author">- Priya Sharma</div>
+      </div>
+      <div class="testimonial-card" tabindex="0" aria-label="Testimonial by Rahul Desai">
+        “Participating in the Laddu auction has been one of the highlights of the festival for me. It really connects us all in celebration and joy.”
+        <div class="testimonial-author">- Rahul Desai</div>
+      </div>
+      <div class="testimonial-card" tabindex="0" aria-label="Testimonial by Sunita Kulkarni">
+        “A perfect festival organized with so much love and dazzling energy. The memories from past years bring me back every time.”
+        <div class="testimonial-author">- Sunita Kulkarni</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <p>© 2025 JHUS-JAI HANUMAN UTSAV SAMTIHI. All Rights Reserved.</p>
+    <p>Connect with us: 
+      <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook profile">Facebook</a> | 
+      <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter profile">Twitter</a> | 
+      <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram profile">Instagram</a> | 
+      <a href="mailto:contact@jhusfestival.org" aria-label="Email contact">Email</a>
+    </p>
+  </footer>
+
+  <!-- Lightbox Overlay -->
+  <div id="lightboxOverlay" role="dialog" aria-modal="true" aria-hidden="true" tabindex="-1">
+    <img src="" alt="Enlarged image" / src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2905b4ee-721d-409a-852d-1f59a001acd3.png">
+  </div>
+
+  <script>
+    // Image lightbox functionality
+    (() => {
+      const lightbox = document.getElementById('lightboxOverlay');
+      const lightboxImg = lightbox.querySelector('img');
+      const galleryImages = document.querySelectorAll('.gallery-card img, .winner-card img');
+
+      galleryImages.forEach(img => {
+        img.addEventListener('click', () => {
+          lightboxImg.src = img.src;
+          lightboxImg.alt = img.alt;
+          lightbox.setAttribute('aria-hidden', 'false');
+          lightbox.classList.add('visible');
+          lightbox.focus();
+        });
+        img.style.cursor = 'pointer';
+      });
+      lightbox.addEventListener('click', () => {
+        lightbox.classList.remove('visible');
+        lightbox.setAttribute('aria-hidden', 'true');
+        lightboxImg.src = '';
+        lightboxImg.alt = '';
+      });
+      document.addEventListener('keydown', e => {
+        if(e.key === 'Escape' && lightbox.classList.contains('visible')) {
+          lightbox.classList.remove('visible');
+          lightbox.setAttribute('aria-hidden', 'true');
+          lightboxImg.src = '';
+          lightboxImg.alt = '';
+        }
+      });
+    })();
+
+    // Scroll reveal for fade-in sections
+    (() => {
+      const sections = document.querySelectorAll('section');
+      const revealOnScroll = () => {
+        const scrollTop = window.scrollY + window.innerHeight * 0.85;
+        sections.forEach(section => {
+          if(section.offsetTop < scrollTop) {
+            section.style.opacity = 1;
+            section.style.transform = 'translateY(0)';
+          }
+        });
+      };
+      window.addEventListener('scroll', revealOnScroll);
+      revealOnScroll();
+    })();
+
+  </script>
+</body>
+</html>
+
